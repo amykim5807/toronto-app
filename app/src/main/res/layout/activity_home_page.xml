@@ -5,15 +5,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/home_vertical_margin"
+    android:paddingLeft="@dimen/home_horizontal_margin"
+    android:paddingRight="@dimen/home_horizontal_margin"
+    android:paddingTop="@dimen/home_vertical_margin"
     tools:context="com.chaa.dinesafe.HomePage">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+        android:layout_width="304dp"
+        android:layout_height="437dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/search_bar"/>
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/search_button"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/nearby_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/browse_button"/>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
