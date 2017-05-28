@@ -26,7 +26,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/search_bar"/>
+            android:hint="@string/search_bar"
+            />
 
         <Button
             android:id="@+id/search_button"
