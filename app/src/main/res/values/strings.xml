@@ -3,4 +3,9 @@
     <string name="search_bar">Search for a restaurant</string>
     <string name="search_button">Search</string>
     <string name="browse_button">Nearby Restaurants</string>
+    <string name="title_activity_search">Search</string>
+    <string name="title_activity_nearby">Nearby</string>
+    <string name="large_text">text</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_fred">FredActivity</string>
 </resources>
