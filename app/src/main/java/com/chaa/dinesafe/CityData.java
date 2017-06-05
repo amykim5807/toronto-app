@@ -5,4 +5,6 @@ package com.chaa.dinesafe;
  */
 
 public class CityData {
+
+
 }
