@@ -11,26 +11,57 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_width="272dp"
+        android:layout_height="405dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/search_term"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/search_input"
+            android:textAlignment="center"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_horizontal_margin"
+            android:text="Kenzo Ramen\n138 Dundas St. West"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"
+            />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"/>
-
-        <ListView
-            android:id="@+id/search_result"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:paddingTop="@dimen/activity_horizontal_margin"
+            android:text="Kenzo Ramen Bloor \n372 Bloor St. West"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"/>
 
         <TextView
-            android:id="@+id/empty"
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="No Results Found"/>
+            android:paddingTop="@dimen/activity_horizontal_margin"
+            android:text="Kenzo Ramen Shepphard  \n4860 Yonge St."
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\n\n3 results found"
+            android:textAlignment="center"
+            android:typeface="sans"/>
 
     </LinearLayout>
 
