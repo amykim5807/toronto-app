@@ -10,4 +10,5 @@
     <string name="search_result">search result</string>
     <string name="search_query">Here\'s what we found for your search:</string>
     <string name="nearby_text">Here are some nearby restaurants:</string>
+    <string name="info_button">DineSafe Info</string>
 </resources>

@@ -17,6 +17,7 @@ public class HomePage extends AppCompatActivity {
 
     Button search;
     Button nearby;
+    Button info;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         final String searchInput = ((EditText) this.findViewById(R.id.search_input)).getText().toString();
+
 
         search = (Button) findViewById(R.id.search_button);
 
@@ -45,6 +47,17 @@ public class HomePage extends AppCompatActivity {
             public void onClick(View arg0) {
                 Intent myIntent2 = new Intent(HomePage.this, Nearby.class);
                 startActivity(myIntent2);
+            }
+        });
+
+        info = (Button) findViewById(R.id.info_button);
+
+        info.setOnClickListener(new OnClickListener() {
+            public void onClick(View arg0) {
+
+                Intent myIntent3 = new Intent(HomePage.this,
+                        Info.class);
+                startActivity(myIntent3);
             }
         });
     }

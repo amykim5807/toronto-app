@@ -5,50 +5,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/home_vertical_margin"
     android:paddingLeft="@dimen/home_horizontal_margin"
     android:paddingRight="@dimen/home_horizontal_margin"
     android:paddingTop="@dimen/home_vertical_margin"
     tools:context="com.chaa.dinesafe.HomePage">
 
     <LinearLayout
-        android:layout_width="272dp"
-        android:layout_height="405dp"
+        android:layout_width="335dp"
+        android:layout_height="527dp"
         android:layout_weight="1"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <EditText
-            android:id="@+id/search_input"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/search_bar"
-            android:inputType="textPersonName"
-            />
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.08"
+            android:cropToPadding="true"
+            app:srcCompat="@drawable/logo"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp"/>
 
-        <Button
-            android:id="@+id/search_button"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/search_button"/>
+            android:layout_height="88dp"
+            android:layout_weight="0.23"
+            android:orientation="horizontal">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"/>
+            <EditText
+                android:id="@+id/search_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/search_bar"
+                android:inputType="textPersonName"
+                />
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="@string/search_button"/>
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/nearby_button"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/browse_button"/>
+            android:text="@string/browse_button"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/info_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/info_button"
+            android:textSize="18sp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            />
 
     </LinearLayout>
 

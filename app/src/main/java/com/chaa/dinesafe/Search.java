@@ -40,7 +40,8 @@ public class Search extends AppCompatActivity {
         query = "test_case";
         Log.d("test", query);
 
-        searchTerm.setText("@string/search_query"+"\""+query+"\"");
+        String searchText = this.getResources().getString(R.string.search_query);
+        searchTerm.setText(searchText+"\""+query+"\"");
 
         adapter=new ArrayAdapter<String>(getApplicationContext(),
                     android.R.layout.simple_list_item_1,
