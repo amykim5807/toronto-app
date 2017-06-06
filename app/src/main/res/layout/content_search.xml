@@ -20,12 +20,18 @@
 
         <TextView
             android:id="@+id/search_term"
+            android:text="@string/search_query"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/search_input"
             android:textAlignment="center"
             android:textSize="18sp"/>
+
+        <ListView
+            android:id="@+id/search_results"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
 
         <TextView
             android:id="@+id/textView2"

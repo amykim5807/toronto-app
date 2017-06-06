@@ -24,6 +24,8 @@ public class HomePage extends AppCompatActivity {
 
         setContentView(R.layout.activity_home_page);
 
+        final String searchInput = ((EditText) this.findViewById(R.id.search_input)).getText().toString();
+
         search = (Button) findViewById(R.id.search_button);
 
         search.setOnClickListener(new OnClickListener() {
@@ -31,6 +33,7 @@ public class HomePage extends AppCompatActivity {
 
                 Intent myIntent = new Intent(HomePage.this,
                         Search.class);
+                myIntent.putExtra("searchInput",searchInput);
                 startActivity(myIntent);
             }
         });

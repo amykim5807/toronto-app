@@ -11,25 +11,49 @@ import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 public class Search extends AppCompatActivity {
+
+    Button result;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        EditText searchInput = (EditText) this.findViewById(R.id.search_input);
+        ArrayAdapter<String> adapter;
+        ListView list = (ListView) findViewById(R.id.search_results);
+        TextView searchTerm = (TextView) findViewById(R.id.search_term);
 
-        String query = (searchInput.getText().toString());
-        Log.d("test",query);
+        Intent intent = getIntent();
+        String searchInput = intent.getStringExtra("searchInput");
 
+        String query = searchInput;
+        query = "test_case";
+        Log.d("test", query);
 
+        searchTerm.setText("@string/search_query"+"\""+query+"\"");
+
+        adapter=new ArrayAdapter<String>(getApplicationContext(),
+                    android.R.layout.simple_list_item_1,
+                    searchQuery(query));
+        list.setAdapter(adapter);
     }
 
+    private ArrayList<String> searchQuery(String query){
+        ArrayList<String> listItems=new ArrayList<String>();
 
+        listItems.add("test_1");
+        listItems.add("test_2");
 
+        return listItems;
+    }
 }
