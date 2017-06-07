@@ -1,13 +1,8 @@
 package com.chaa.dinesafe;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
-import android.support.v7.widget.SearchView;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -25,17 +20,12 @@ public class HomePage extends AppCompatActivity {
 
         setContentView(R.layout.activity_home_page);
 
-        final String searchInput = ((EditText) this.findViewById(R.id.search_input)).getText().toString();
-
-
         search = (Button) findViewById(R.id.search_button);
 
         search.setOnClickListener(new OnClickListener() {
+            @Override
             public void onClick(View arg0) {
-
-                Intent myIntent = new Intent(HomePage.this,
-                        Search.class);
-                myIntent.putExtra("searchInput",searchInput);
+                Intent myIntent = new Intent(HomePage.this, Search.class);
                 startActivity(myIntent);
             }
         });
