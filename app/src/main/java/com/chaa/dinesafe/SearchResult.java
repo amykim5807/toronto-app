@@ -7,10 +7,15 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by Amy on 2017-06-06.
+ * Initialization of Search Result
  */
-
 public class SearchResult extends AppCompatActivity{
+
+
+    /**
+     * Sets content view to search result, changes text based on the specific restaurant info.
+     * @param savedInstanceState
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +27,12 @@ public class SearchResult extends AppCompatActivity{
         TextView rating = (TextView) findViewById(R.id.rating);
         TextView inspection = (TextView) findViewById(R.id.inspection);
 
-        ArrayList<String> info = getIntent().getStringArrayListExtra("INFO");
+        String[] info = getIntent().getStringArrayExtra("INFO");
 
-        name.setText(info.get(4));
-        address.setText(info.get(6));
-        rating.setText(info.get(7));
-        inspection.setText("Last Inspection Date: "+info.get(10)+"\nInfraction Description: "+info.get(9));
+        name.setText(info[4]);
+        address.setText(info[6]);
+        rating.setText(info[7]);
+        inspection.setText("Last Inspection Date: "+info[10]+"\nInfraction Description: "+info[9]);
 
     }
 

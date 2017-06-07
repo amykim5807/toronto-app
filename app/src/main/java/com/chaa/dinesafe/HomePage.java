@@ -8,11 +8,21 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+/**
+ * Initialization of Home Screen (main activity)
+ */
+
 public class HomePage extends AppCompatActivity {
 
     Button search;
     Button nearby;
     Button info;
+
+
+    /**
+     * Sets content view to main screen, implements buttons that lead to other activities.
+     * @param savedInstanceState
+     */
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

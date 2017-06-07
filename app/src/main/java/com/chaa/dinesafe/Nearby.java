@@ -11,7 +11,15 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+/**
+ * Initialization of Nearby Restaurants
+ */
+
 public class Nearby extends AppCompatActivity {
+
+    /**
+     * Sets content view to Nearby, with a dynamic ListView.
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
