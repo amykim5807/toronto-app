@@ -3,10 +3,14 @@ package com.chaa.dinesafe;
 import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -26,7 +30,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
-public class Search extends ListActivity {
+public class Search extends AppCompatActivity {
 
     Button result;
 
@@ -39,7 +43,7 @@ public class Search extends ListActivity {
         ListView list = (ListView) findViewById(R.id.search_results);
         //TextView searchTerm = (TextView) findViewById(R.id.search_term);
 
-        String query = "PIZZA";
+        final String query = "PIZZA";
         Log.d("test", query);
         ArrayList<String> listItems=new ArrayList<String>();
         listItems.add("pizza");
@@ -49,8 +53,36 @@ public class Search extends ListActivity {
 
         adapter=new ArrayAdapter<String>(getApplicationContext(),
                 android.R.layout.simple_list_item_1,
-                listItems);
+                listItems){
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView text = (TextView) view.findViewById(android.R.id.text1);
+                String[] name = (String[]) ((this.getItem(position)).split("\n"));
+                if (searchQuery(name[0]).get(7).equals("Pass")){
+                    text.setTextColor(Color.GREEN);
+                }
+                else if (searchQuery(name[0]).get(7).equals("Conditional Pass")){
+                    text.setTextColor(Color.YELLOW);
+                }
+                else if (searchQuery(name[0]).get(7).equals("Closed")){
+                    text.setTextColor(Color.RED);
+                }
+                
+                return view;
+            }
+        };
         list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                Intent appInfo = new Intent(Search.this, SearchResult.class);
+                String[] name = (String[]) (((String)adapter.getItemAtPosition(position)).split("\n"));
+                appInfo.putExtra("INFO", searchQuery(name[0]));
+                startActivity(appInfo);
+            }
+        });
     }
 
     private ArrayList<String> searchQuery(String query){
@@ -62,42 +94,20 @@ public class Search extends ListActivity {
             InputStream is = getAssets().open(fileName);
             BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 
-            /*String line = "";
+            String line = "";
 
             while ((line = br.readLine()) != null) {
                 String[] str = line.split(",");
                 if (str[4].contains(query)){
                     listItems.add(str[4]+"\n"+str[6]);
                 }
-            }*/
+            }
         }
         catch(Exception e){
             Log.d("error",e.getMessage());
         }
         return listItems;
     }
-
-    /*
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
-
-        new AlertDialog.Builder(this)
-                .setTitle("Hello")
-                .setMessage("from " + getListView().getItemAtPosition(position))
-                .setPositiveButton("OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {}
-                        })
-                .show();
-
-        Toast.makeText(Search.this,
-                "ListView: " + l.toString() + "\n" +
-                        "View: " + v.toString() + "\n" +
-                        "position: " + String.valueOf(position) + "\n" +
-                        "id: " + String.valueOf(id),
-                Toast.LENGTH_LONG).show();
-    }*/
 
 
     /*

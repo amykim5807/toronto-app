@@ -11,4 +11,8 @@
     <string name="search_query">Here\'s what we found for your search:</string>
     <string name="nearby_text">Here are some nearby restaurants:</string>
     <string name="info_button">DineSafe Info</string>
+    <string name="info_text"> DineSafe is Toronto Public Health\'s food safety program that inspects all establishments serving and preparing food. \n\nIf
+        a restaurant receives a Pass rating (in green), only minor or no infractions have been observed during the inspection. A Conditional Pass rating (in yellow)
+    represents one or more significant infractions, and a Closed notice (in red) is issued when crucial infractions observed are not corrected immediately. \n\nOur
+        app queries data from the last two years to find a particular restaurant you might be looking for, or uses your geographical location to find restaurants nearby.</string>
 </resources>
